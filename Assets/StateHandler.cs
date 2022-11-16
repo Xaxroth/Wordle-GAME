@@ -1,0 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum StateHandler
+{
+    Correct = 0,
+    Incorrect = 1,
+    WrongLocation = 2,
+    Default = 3
+}
