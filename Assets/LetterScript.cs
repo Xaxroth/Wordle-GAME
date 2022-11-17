@@ -8,8 +8,8 @@ public class LetterScript : MonoBehaviour
 
     // This is attached to every square in the game space, set up into a grid by the GameManager. Handles the info regarding what letter the box has storage wise as well as the visuals.
 
-    public char? Letter { get; private set; } = null;
-    public StateHandler stateHandler { get; private set; } = StateHandler.Default;
+    [SerializeField] private char? Letter { get; set; } = null;
+    [SerializeField] private StateHandler stateHandler { get; set; } = StateHandler.Default;
 
     public GameObject _default;
     public GameObject _close;
@@ -17,14 +17,31 @@ public class LetterScript : MonoBehaviour
 
     public Text LetterText = null;
 
-    public void Update()
-    {
-
-    }
-
     public void Awake()
     {
         LetterText = GetComponentInChildren<Text>();
+    }
+
+    public void Update()
+    {
+        switch (stateHandler)
+        {
+            case StateHandler.Default:
+                _default.SetActive(true);
+                _close.SetActive(false);
+                _correct.SetActive(false);
+                break;
+            case StateHandler.WrongLocation:
+                _default.SetActive(false);
+                _close.SetActive(true);
+                _correct.SetActive(false);
+                break;
+            case StateHandler.Correct:
+                _default.SetActive(false);
+                _close.SetActive(false);
+                _correct.SetActive(true);
+                break;
+        }
     }
 
     public void InputLetter(char c)
@@ -48,6 +65,6 @@ public class LetterScript : MonoBehaviour
     {
         stateHandler = StateHandler.Default;
         Letter = null;
-        LetterText = null;
+        LetterText.text = null;
     }
 }

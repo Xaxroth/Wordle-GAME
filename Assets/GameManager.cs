@@ -8,26 +8,25 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private string _wordToGuess;
-    [SerializeField] private LetterScript _letterBoxPrefab;
-    [SerializeField] private int _numberOfSquares;
-
-    [SerializeField] private int _numberOfRows = 5;
     [SerializeField] const int _numberOfLettersPerWord = 5;
+    [SerializeField] private int _numberOfRows = 5;
     [SerializeField] private int _currentRow = 1;
 
     [SerializeField] private int _letterNumber;
 
-    public bool _allLettersCorrect;
+    [SerializeField] private int index = 0;
+    [SerializeField] private int currentRow = 0;
 
-    [SerializeField] private bool _isGreen;
-    [SerializeField] private bool _isYellow;
-    [SerializeField] private bool _isNormal;
+    [SerializeField] private LetterScript _letterBoxPrefab;
+    [SerializeField] private GridLayoutGroup _grid = null;
+    [SerializeField] private WordClass _wordClass;
 
-    private bool _gameOver;
+    List<LetterScript> allLetters = null;
 
-    [SerializeField] private string[] _wordToGuessLetters;
-    [SerializeField] private string[] _currentRowLetters;
+    char?[] wordGuess = new char?[_numberOfLettersPerWord];
+
+    [SerializeField] private bool _allLettersCorrect;
+    [SerializeField] private bool _gameOver;
 
     [SerializeField] private AudioSource _managerAudioSource;
 
@@ -39,16 +38,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject ErrorMessageWordTooShort;
     [SerializeField] private GameObject VictoryScreen;
     [SerializeField] private GameObject LoseScreen;
-
-    public WordClass wordClass; 
-
-    List<LetterScript> allLetters = null;
-    int index = 0;
-    int currentRow = 0;
-
-    char?[] wordGuess = new char?[_numberOfLettersPerWord];
-
-    [SerializeField] GridLayoutGroup _grid = null;
 
     void Awake()
     {
@@ -63,9 +52,14 @@ public class GameManager : MonoBehaviour
         {
             TranslateInput(Input.inputString);
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ResetGame();
+        }
     }
 
-    private void TranslateInput(string keyInput)
+    public void TranslateInput(string keyInput)
     {
         foreach(char c in keyInput)
         {
@@ -95,6 +89,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ManualTranslateInput()
+    {
+        if (index == _numberOfLettersPerWord) // If the index is at the last slot of the word (the word's total length), it will be a valid guess.
+        {
+            Guess();
+        }
+        else
+        {
+            StartCoroutine(ErrorMessage());
+            _managerAudioSource.PlayOneShot(_insufficientLetters);
+        }
+    }
+
     private void InitializeGame()
     {
         if (allLetters == null)
@@ -115,7 +122,7 @@ public class GameManager : MonoBehaviour
 
     public void EnterKey(char c)
     {
-        if (index < _numberOfLettersPerWord) // As long as there are not 5 characters present, the player can input letters. For each letter entered it moves forward in the current row index.
+        if (index < _numberOfLettersPerWord && !_gameOver) // As long as there are not 5 characters present, the player can input letters. For each letter entered it moves forward in the current row index.
         {
             c = char.ToUpper(c);
 
@@ -125,7 +132,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void DeleteKey()
+    public void DeleteKey()
     {
         if (index > 0)
         {
@@ -135,7 +142,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Guess()
+    public void Guess()
     {
 
         StringBuilder word = new StringBuilder();
@@ -147,7 +154,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < _numberOfLettersPerWord; i++)
         {
-            bool correct = wordGuess[i] == wordClass.wordToBeGuessed[i];
+            bool correct = wordGuess[i] == _wordClass.wordToBeGuessed[i];
 
             if (!correct)
             {
@@ -155,26 +162,23 @@ public class GameManager : MonoBehaviour
  
                 for (int j = 0; j < _numberOfLettersPerWord; j++)
                 {
-                    letterExists = wordGuess[i] == wordClass.wordToBeGuessed[j];
+                    letterExists = wordGuess[i] == _wordClass.wordToBeGuessed[j];
 
                     if (letterExists)
                     {
-                        allLetters[i + (currentRow * _numberOfLettersPerWord)]._default.SetActive(false);
-                        allLetters[i + (currentRow * _numberOfLettersPerWord)]._close.SetActive(true);
+                        allLetters[i + (currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.WrongLocation);
                         break;
                     }
                 }
             }
             else
             {
-                allLetters[i + (currentRow * _numberOfLettersPerWord)]._correct.SetActive(false);
-                allLetters[i + (currentRow * _numberOfLettersPerWord)]._correct.SetActive(true);
+                allLetters[i + (currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.Correct);
             }
         }
 
-        if (word.ToString().Equals(wordClass.wordToBeGuessed) && wordClass.wordToBeGuessed != null)
+        if (word.ToString().Equals(_wordClass.wordToBeGuessed) && _wordClass.wordToBeGuessed != null)
         {
-
             _managerAudioSource.PlayOneShot(_victory);
             VictoryScreen.SetActive(true);
             _gameOver = true;
@@ -200,6 +204,7 @@ public class GameManager : MonoBehaviour
             _managerAudioSource.PlayOneShot(_lose);
             LoseScreen.SetActive(true);
             _currentRow = 0;
+            _gameOver = true;
         }
     }
 
@@ -210,4 +215,21 @@ public class GameManager : MonoBehaviour
         ErrorMessageWordTooShort.SetActive(false);
     }
 
+    public void ResetGame()
+    {
+        LoseScreen.SetActive(false);
+        VictoryScreen.SetActive(false);
+
+        _wordClass.Retry();
+
+        for (int i = 0; i < allLetters.Count; i++) // Initilalizes rows, and then for each row it makes letter boxes according to the total length of the words.
+        {
+            allLetters[i].ClearAll();
+            DeleteKey();
+        }
+
+        currentRow = 0;
+
+        _gameOver = false;
+    }
 }

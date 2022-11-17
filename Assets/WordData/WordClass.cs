@@ -6,12 +6,10 @@ using UnityEngine.UI;
 public class WordClass : MonoBehaviour
 {
     [SerializeField] private TextAsset _allWords;
-
-    public string wordToBeGuessed;
-
     [SerializeField] private Text _wordSpoiler;
 
     public List<string> _wordList;
+    public string wordToBeGuessed;
 
     void Start()
     {

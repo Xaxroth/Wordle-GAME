@@ -182,10 +182,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -261,10 +261,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -340,10 +340,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -414,6 +414,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: N
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &25085332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,7 +460,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 25085333}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 25085331}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &25085333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,6 +565,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: Z
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &72377633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,7 +611,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 72377634}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 72377632}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &72377634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,6 +716,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: S
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &91201618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,7 +762,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 91201619}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 91201617}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &91201619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,10 +872,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -906,10 +951,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -956,12 +1001,13 @@ RectTransform:
   - {fileID: 1564228841}
   - {fileID: 1653060883}
   - {fileID: 1297025660}
+  - {fileID: 1317499904}
   m_Father: {fileID: 1348461548}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314, y: -192}
+  m_AnchoredPosition: {x: -333, y: -181}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &227456869
@@ -1062,10 +1108,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1136,6 +1182,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: W
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &287356806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,7 +1228,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 287356807}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 287356805}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &287356807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,7 +1313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 301, y: 211}
+  m_AnchoredPosition: {x: 300, y: 211}
   m_SizeDelta: {x: 842.4, y: 65.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309459437
@@ -1356,10 +1417,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1430,6 +1491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: T
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &359668196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,7 +1537,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 359668197}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359668195}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &359668197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1645,6 +1721,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: I
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &465767039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1688,7 +1767,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 465767040}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 465767038}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &465767040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1940,10 +2031,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2052,6 +2143,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: C
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &591226127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,7 +2189,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 591226128}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 591226126}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &591226128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2193,10 +2299,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2272,10 +2378,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2346,6 +2452,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: V
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &639915663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2389,7 +2498,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 639915664}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 639915662}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &639915664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2575,6 +2696,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: R
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &742563803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2618,7 +2742,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 742563804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 742563802}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &742563804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2711,6 +2847,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: G
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &776585075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2754,7 +2893,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 776585076}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 776585074}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &776585076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2852,10 +3003,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3265,10 +3416,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3344,10 +3495,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3418,6 +3569,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: Y
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1010822606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3461,7 +3615,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1010822607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1010822605}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1010822607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3557,7 +3723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 30.5}
+  m_AnchoredPosition: {x: 0, y: 30.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1063539306
@@ -3773,10 +3939,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3852,10 +4018,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4006,10 +4172,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4080,6 +4246,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: P
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1196068096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4123,7 +4292,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1196068097}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1196068095}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1196068097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4221,10 +4402,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4283,6 +4464,139 @@ RectTransform:
   m_AnchoredPosition: {x: 20, y: 14.357391}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1317499903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317499904}
+  - component: {fileID: 1317499907}
+  - component: {fileID: 1317499906}
+  - component: {fileID: 1317499905}
+  m_Layer: 5
+  m_Name: Enter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1317499904
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317499903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1605681335}
+  m_Father: {fileID: 163181197}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 839, y: -8}
+  m_SizeDelta: {x: 167.18, y: 90.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1317499905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317499903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1317499906}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2027679184}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ManualTranslateInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1317499906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317499903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1317499907
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317499903}
+  m_CullTransparentMesh: 1
 --- !u!1 &1318519572
 GameObject:
   m_ObjectHideFlags: 0
@@ -4385,7 +4699,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.00000667572, y: 0}
+  m_SizeDelta: {x: -0.00000333786, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1330807344
 MonoBehaviour:
@@ -4462,7 +4776,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.00000667572, y: 0}
+  m_SizeDelta: {x: -0.00000333786, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1348461549
 MonoBehaviour:
@@ -4561,10 +4875,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4714,6 +5028,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: H
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1406138384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4757,7 +5074,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1406138385}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1406138383}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1406138385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4855,10 +5184,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4934,10 +5263,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -5037,7 +5366,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1451055889}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1451055891}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1451055889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5090,6 +5431,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: A
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!1 &1527049495
 GameObject:
   m_ObjectHideFlags: 0
@@ -5144,6 +5488,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: O
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1527049498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5187,7 +5534,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1527049499}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1527049497}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1527049499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5280,6 +5639,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: K
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1554693107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5323,7 +5685,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1554693108}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1554693106}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1554693108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5421,10 +5795,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -5540,6 +5914,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: J
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1595604538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5583,7 +5960,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1595604539}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1595604537}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1595604539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5621,6 +6010,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595604535}
+  m_CullTransparentMesh: 1
+--- !u!1 &1605681334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1605681335}
+  - component: {fileID: 1605681337}
+  - component: {fileID: 1605681336}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1605681335
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605681334}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1317499904}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1605681336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605681334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Submit
+--- !u!222 &1605681337
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605681334}
   m_CullTransparentMesh: 1
 --- !u!1 &1621834242
 GameObject:
@@ -5699,7 +6167,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -5739,9 +6207,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _allWords: {fileID: 4900000, guid: 1e6c10707b5f57049a5e66454440f5a8, type: 3}
-  wordToBeGuessed: 
   _wordSpoiler: {fileID: 1111897229}
   _wordList: []
+  wordToBeGuessed: 
 --- !u!1 &1642439612
 GameObject:
   m_ObjectHideFlags: 0
@@ -5993,7 +6461,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
-  _letterText: M
+  _letterText: Mg
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1695081569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6037,7 +6508,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1695081570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1695081568}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1695081570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6135,10 +6618,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -6214,10 +6697,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -6407,6 +6890,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: D
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1793507465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6450,7 +6936,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1793507466}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1793507464}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1793507466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6543,6 +7041,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: L
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1798743099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6586,7 +7087,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1798743100}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1798743098}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1798743100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6754,6 +7267,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: F
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1942622457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6797,7 +7313,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1942622458}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1942622456}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1942622458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6926,6 +7454,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: X
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &1963044776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6969,7 +7500,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1963044777}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1963044775}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1963044777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7105,10 +7648,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -7155,18 +7698,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b147aedefd0fc46bcf5ecab734ac7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wordToGuess: 
-  _letterBoxPrefab: {fileID: 2939015153597402209, guid: dd91390e8a49fd34ca00c290a8006a7b, type: 3}
-  _numberOfSquares: 0
   _numberOfRows: 5
   _currentRow: 1
   _letterNumber: 0
+  index: 0
+  currentRow: 0
+  _letterBoxPrefab: {fileID: 2939015153597402209, guid: dd91390e8a49fd34ca00c290a8006a7b, type: 3}
+  _grid: {fileID: 1019566780}
+  _wordClass: {fileID: 1621834247}
   _allLettersCorrect: 0
-  _isGreen: 0
-  _isYellow: 0
-  _isNormal: 0
-  _wordToGuessLetters: []
-  _currentRowLetters: []
+  _gameOver: 0
   _managerAudioSource: {fileID: 2027679186}
   _wrongWord: {fileID: 8300000, guid: d89acc09ee17f114e82f15b5b17901d3, type: 3}
   _victory: {fileID: 8300000, guid: 6f180650b41fb7f428476a45203a7f92, type: 3}
@@ -7175,8 +7716,6 @@ MonoBehaviour:
   ErrorMessageWordTooShort: {fileID: 560195403}
   VictoryScreen: {fileID: 1998650795}
   LoseScreen: {fileID: 1756392527}
-  wordClass: {fileID: 1621834247}
-  _grid: {fileID: 1019566780}
 --- !u!4 &2027679185
 Transform:
   m_ObjectHideFlags: 0
@@ -7346,10 +7885,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -7425,10 +7964,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -7499,6 +8038,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: U
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &2061766574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7542,7 +8084,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2061766575}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2061766573}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2061766575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7635,6 +8189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: E
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &2076107489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7678,7 +8235,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2076107490}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2076107488}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2076107490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7771,6 +8340,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: B
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &2083177537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7814,7 +8386,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2083177538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2083177536}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2083177538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7907,6 +8491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _letter: {fileID: 0}
   _letterText: Q
+  _allChars: 
+  _letterChar: 0
+  _gameManager: {fileID: 2027679184}
 --- !u!114 &2094359708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7950,7 +8537,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2094359709}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2094359707}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ManualCharacterInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2094359709
 MonoBehaviour:
   m_ObjectHideFlags: 0

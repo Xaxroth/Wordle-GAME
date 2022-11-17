@@ -8,6 +8,12 @@ public class ButtonScript : MonoBehaviour
     [SerializeField] private Text _letter;
     [SerializeField] private string _letterText;
 
+    [SerializeField] public char[] _allChars;
+
+    [SerializeField] public char _letterChar;
+
+    [SerializeField] private GameManager _gameManager;
+
     void Start()
     {
         _letter = GetComponentInChildren<Text>();
@@ -16,10 +22,15 @@ public class ButtonScript : MonoBehaviour
         {
             _letter.text = _letterText;
         }
+
+        _allChars = _letterText.ToCharArray();
+
+        _letterChar = _allChars[0];
     }
 
-    void Update()
+    public void ManualCharacterInput()
     {
-        
+        _gameManager.EnterKey(_letterChar);
     }
+
 }

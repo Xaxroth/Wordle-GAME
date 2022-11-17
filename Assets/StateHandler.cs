@@ -4,8 +4,7 @@ using UnityEngine;
 
 public enum StateHandler
 {
-    Correct = 0,
-    Incorrect = 1,
+    Correct = 1,
     WrongLocation = 2,
     Default = 3
 }
