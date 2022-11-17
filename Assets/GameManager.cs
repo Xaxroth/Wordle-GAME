@@ -52,11 +52,6 @@ public class GameManager : MonoBehaviour
         {
             TranslateInput(Input.inputString);
         }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ResetGame();
-        }
     }
 
     public void TranslateInput(string keyInput)
