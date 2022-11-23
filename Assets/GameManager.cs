@@ -217,7 +217,7 @@ public class GameManager : MonoBehaviour
 
         _wordClass.Retry();
 
-        for (int i = 0; i < allLetters.Count; i++) // Initilalizes rows, and then for each row it makes letter boxes according to the total length of the words.
+        for (int i = 0; i < allLetters.Count; i++) // Clears all boxes of information - current index is counted down on DeleteKey() until index reaches 0.
         {
             allLetters[i].ClearAll();
             DeleteKey();
