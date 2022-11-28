@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class WordClass : MonoBehaviour
 {
+    public static WordClass Instance { get; private set; }
     [SerializeField] private TextAsset _allWords;
-    [SerializeField] private Text _wordSpoiler;
+    [SerializeField] private TextMeshProUGUI _wordSpoiler;
 
     public List<string> _wordList;
     public string wordToBeGuessed;
