@@ -48,10 +48,10 @@ public class ButtonScript : MonoBehaviour
                 gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
                 break;
             case 1:
-                gameObject.GetComponent<Image>().color = new Color32(255, 255, 0, 255);
+                gameObject.GetComponent<Image>().color = new Color32(255, 220, 90, 255);
                 break;
             case 2:
-                gameObject.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                gameObject.GetComponent<Image>().color = new Color32(80, 255, 70, 255);
                 break;
         }
     }

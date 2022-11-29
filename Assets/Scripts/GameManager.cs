@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool _allLettersCorrect;
     [SerializeField] private bool _gameOver;
 
-    [SerializeField] public List<LetterScript> allLetters = null;
-    [SerializeField] public List<ButtonScript> allButtons = null;
+    public List<LetterScript> allLetters = null;
+    public List<ButtonScript> allButtons = null;
 
     public char?[] wordGuess = new char?[_numberOfLettersPerWord];
 
@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
 
     public void DeleteKey()
     {
-        if (index > 0) // As long as the index is greater than 0, we move back in the row.
+        if (index > 0) // As long as the index is greater than 0, we move back in the row. We clear any visual text and set the slot to be null.
         {
             index--;
             allLetters[(currentRow * _numberOfLettersPerWord) + index].DeleteLetter();
@@ -152,26 +152,25 @@ public class GameManager : MonoBehaviour
     {
         StringBuilder word = new StringBuilder();
 
-        for (int i = 0; i < _numberOfLettersPerWord; i++)
+        for (int i = 0; i < _numberOfLettersPerWord; i++) // Puts the current row's characters into a stringbuilder which is then converted to a string for comparison.
         {
             word.Append(wordGuess[i]);
         }
 
-        if (_wordClass._wordList.Contains(word.ToString()))
+        if (_wordClass._wordList.Contains(word.ToString())) // The guess is a 5 letter word that exists in the wordlist.
         {
-            // The guess is a real 5 letter word.
-
             for (int i = 0; i < _numberOfLettersPerWord; i++)
             {
-                bool correct = wordGuess[i] == _wordClass.wordToBeGuessed[i];
 
-                if (!correct)
+                bool correct = wordGuess[i] == _wordClass.wordToBeGuessed[i]; // Returns true if the character's position in the word is equal to that of the word to be guessed. The bool changes the letterbox background to green.
+
+                if (!correct) // If the letter is not in the correct spot, a second check is made to see if the letter exists at all in the current row.
                 {
                     bool letterExists = false;
 
                     for (int j = 0; j < _numberOfLettersPerWord; j++)
                     {
-                        letterExists = wordGuess[i] == _wordClass.wordToBeGuessed[j];
+                        letterExists = wordGuess[i] == _wordClass.wordToBeGuessed[j]; // Returns true if the character's position in the word is wrong, but exists somewhere in the word to be guessed. The bool changes the letterbox background to yellow.
 
                         if (letterExists)
                         {
@@ -180,13 +179,13 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }
-                else
+                else // If the defined "correct" bool returns true, we automatically set the state as correct for that letter.
                 {
                     allLetters[i + (currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.Correct);
                 }
             }
 
-            if (word.ToString().Equals(_wordClass.wordToBeGuessed) && _wordClass.wordToBeGuessed != null)
+            if (word.ToString().Equals(_wordClass.wordToBeGuessed) && _wordClass.wordToBeGuessed != null) // Compiles the array of characters entered into a string and compares it to the word generated from the wordlist. If it matches, the player has correctly guessed the word and won the game.
             {
                 _managerAudioSource.PlayOneShot(_victory);
                 VictoryScreen.SetActive(true);
@@ -197,7 +196,7 @@ public class GameManager : MonoBehaviour
                 _managerAudioSource.PlayOneShot(_wrongWord);
             }
 
-            if (currentRow < _numberOfRows)
+            if (currentRow < _numberOfRows) // With every guess the player makes, it shifts to the next row and resets the index.
             {
                 currentRow++;
                 index = 0;
@@ -208,7 +207,7 @@ public class GameManager : MonoBehaviour
                 return;
             }
 
-            if (currentRow == _numberOfRows && !_gameOver)
+            if (currentRow == _numberOfRows && !_gameOver) // If the player runs out of guesses, they lose the game.
             {
                 _managerAudioSource.PlayOneShot(_lose);
                 LoseScreen.SetActive(true);
@@ -238,7 +237,7 @@ public class GameManager : MonoBehaviour
         ErrorMessageWordDoesNotExist.SetActive(false);
     }
 
-    public void ResetGame()
+    public void ResetGame() // Resets all input data and starts a new game session with a new word.
     {
         LoseScreen.SetActive(false);
         VictoryScreen.SetActive(false);
@@ -251,7 +250,7 @@ public class GameManager : MonoBehaviour
             DeleteKey();
         }
 
-        for (int i = 0; i < allButtons.Count; i++)
+        for (int i = 0; i < allButtons.Count; i++) // Resets all button colors to grey.
         {
             allButtons[i].SetColor(0);
         }
