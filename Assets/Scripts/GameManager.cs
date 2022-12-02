@@ -8,24 +8,22 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // The game manager script - handles all data structures and game logistics. Also handles win conditions and input from the player.
+
     public static GameManager Instance { get; set; }
 
     [Header("Logistics")]
 
     [SerializeField] const int _numberOfLettersPerWord = 5;
     [SerializeField] private int _numberOfRows = 5;
-    [SerializeField] private int _currentRow = 1;
 
-    [SerializeField] private int _letterNumber;
-
-    [SerializeField] private int index = 0;
-    [SerializeField] private int currentRow = 0;
+    [SerializeField] private int _index = 0;
+    [SerializeField] private int _currentRow = 0;
 
     [SerializeField] private LetterScript _letterBoxPrefab;
     [SerializeField] private GridLayoutGroup _grid = null;
     [SerializeField] private WordClass _wordClass;
 
-    [SerializeField] private bool _allLettersCorrect;
     [SerializeField] private bool _gameOver;
 
     public List<LetterScript> allLetters = null;
@@ -44,20 +42,20 @@ public class GameManager : MonoBehaviour
 
     [Header("Error Messages")]
 
-    [SerializeField] private GameObject ErrorMessageWordTooShort;
-    [SerializeField] private GameObject ErrorMessageWordDoesNotExist;
-    [SerializeField] private GameObject VictoryScreen;
-    [SerializeField] private GameObject LoseScreen;
+    [SerializeField] private GameObject _ErrorMessageWordTooShort;
+    [SerializeField] private GameObject _ErrorMessageWordDoesNotExist;
+    [SerializeField] private GameObject _VictoryScreen;
+    [SerializeField] private GameObject _LoseScreen;
 
-    void Awake()
+    private void Awake()
     {
         InitializeGame();
-        ErrorMessageWordTooShort.SetActive(false);
-        ErrorMessageWordDoesNotExist.SetActive(false);
-        VictoryScreen.SetActive(false);
+        _ErrorMessageWordTooShort.SetActive(false);
+        _ErrorMessageWordDoesNotExist.SetActive(false);
+        _VictoryScreen.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.anyKeyDown && !_gameOver) // Checks for player inputs during runtime, and translates whatever input entered.
         {
@@ -69,7 +67,7 @@ public class GameManager : MonoBehaviour
     {
         foreach(char c in keyInput)
         {
-            if (c == '\b') // Backspace deletes the letter in the current slot
+            if (c == '\b') // Backspace deletes the letter in the current slot.
             {
                 DeleteKey();
             }
@@ -81,7 +79,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    if (index == _numberOfLettersPerWord) // If the index is at the last slot of the word (the word's total length), it will be a valid guess. If not, an error message appears.
+                    if (_index == _numberOfLettersPerWord) // If the index is at the last slot of the word (the word's total length), it will be a valid guess. If not, an error message appears.
                     {
                         Guess();
                     }
@@ -97,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     public void ManualTranslateInput() // The on-screen keyboard submit function - runs on clicking the "Submit" key on the screen. Works the same as submitting through keyboard.
     {
-        if (index == _numberOfLettersPerWord) // If the index is at the last slot of the word (the word's total length), it will be a valid guess. If not, an error message appears.
+        if (_index == _numberOfLettersPerWord) // If the index is at the last slot of the word (the word's total length), it will be a valid guess. If not, an error message appears.
         {
             Guess();
         }
@@ -128,23 +126,23 @@ public class GameManager : MonoBehaviour
 
     public void EnterKey(char c)
     {
-        if (index < _numberOfLettersPerWord && !_gameOver) // As long as there are not 5 characters present, the player can input letters. For each letter entered it moves forward in the current row index.
+        if (_index < _numberOfLettersPerWord && !_gameOver) // As long as there are not 5 characters present, the player can input letters. For each letter entered it moves forward in the current row index.
         {
             c = char.ToUpper(c); // Converts whatever input is given into upper-case letters so that the string comparison matches. All words in the wordlist are uppercase, so the input must match.
 
-            allLetters[(currentRow * _numberOfLettersPerWord) + index].InputLetter(c); // Changes the text value of the current letter box to the char given.
-            wordGuess[index] = c;
-            index++;
+            allLetters[(_currentRow * _numberOfLettersPerWord) + _index].InputLetter(c); // Changes the text value of the current letter box to the char given.
+            wordGuess[_index] = c;
+            _index++;
         }
     }
 
     public void DeleteKey()
     {
-        if (index > 0) // As long as the index is greater than 0, we move back in the row. We clear any visual text and set the slot to be null.
+        if (_index > 0) // As long as the index is greater than 0, we move back in the row. We clear any visual text and set the slot to be null.
         {
-            index--;
-            allLetters[(currentRow * _numberOfLettersPerWord) + index].DeleteLetter();
-            wordGuess[index] = null;
+            _index--;
+            allLetters[(_currentRow * _numberOfLettersPerWord) + _index].DeleteLetter();
+            wordGuess[_index] = null;
         }
     }
 
@@ -174,21 +172,25 @@ public class GameManager : MonoBehaviour
 
                         if (letterExists)
                         {
-                            allLetters[i + (currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.WrongLocation);
+                            allLetters[i + (_currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.WrongLocation);
                             break;
+                        }
+                        else
+                        {
+                            allLetters[i + (_currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.Default); 
                         }
                     }
                 }
                 else // If the defined "correct" bool returns true, we automatically set the state as correct for that letter.
                 {
-                    allLetters[i + (currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.Correct);
+                    allLetters[i + (_currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.Correct);
                 }
             }
 
             if (word.ToString().Equals(_wordClass.wordToBeGuessed) && _wordClass.wordToBeGuessed != null) // Compiles the array of characters entered into a string and compares it to the word generated from the wordlist. If it matches, the player has correctly guessed the word and won the game.
             {
                 _managerAudioSource.PlayOneShot(_victory);
-                VictoryScreen.SetActive(true);
+                _VictoryScreen.SetActive(true);
                 _gameOver = true;
             }
             else
@@ -196,10 +198,10 @@ public class GameManager : MonoBehaviour
                 _managerAudioSource.PlayOneShot(_wrongWord);
             }
 
-            if (currentRow < _numberOfRows) // With every guess the player makes, it shifts to the next row and resets the index.
+            if (_currentRow < _numberOfRows) // With every guess the player makes, it shifts to the next row and resets the index.
             {
-                currentRow++;
-                index = 0;
+                _currentRow++;
+                _index = 0;
             }
             else
             {
@@ -207,10 +209,10 @@ public class GameManager : MonoBehaviour
                 return;
             }
 
-            if (currentRow == _numberOfRows && !_gameOver) // If the player runs out of guesses, they lose the game.
+            if (_currentRow == _numberOfRows && !_gameOver) // If the player runs out of guesses, they lose the game.
             {
                 _managerAudioSource.PlayOneShot(_lose);
-                LoseScreen.SetActive(true);
+                _LoseScreen.SetActive(true);
                 _currentRow = 0;
                 _gameOver = true;
             }
@@ -224,29 +226,30 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WordTooShort()
     {
-        ErrorMessageWordTooShort.SetActive(true);
+        _ErrorMessageWordTooShort.SetActive(true);
         yield return new WaitForSeconds(2);
-        ErrorMessageWordTooShort.SetActive(false);
+        _ErrorMessageWordTooShort.SetActive(false);
     }
 
     private IEnumerator WordDoesNotExist()
     {
         _managerAudioSource.PlayOneShot(_insufficientLetters);
-        ErrorMessageWordDoesNotExist.SetActive(true);
+        _ErrorMessageWordDoesNotExist.SetActive(true);
         yield return new WaitForSeconds(2);
-        ErrorMessageWordDoesNotExist.SetActive(false);
+        _ErrorMessageWordDoesNotExist.SetActive(false);
     }
 
     public void ResetGame() // Resets all input data and starts a new game session with a new word.
     {
-        LoseScreen.SetActive(false);
-        VictoryScreen.SetActive(false);
+        _LoseScreen.SetActive(false);
+        _VictoryScreen.SetActive(false);
 
         _wordClass.Retry(); // Calls the retry method of the wordClass script which picks a new word from the word list to be guessed. It can be the same as the previous word.
 
         for (int i = 0; i < allLetters.Count; i++) // Clears all boxes of information - current index is counted down on DeleteKey() until index reaches 0.
         {
             allLetters[i].ClearAll();
+            allLetters[i].SetLetterState(StateHandler.Reset);
             DeleteKey();
         }
 
@@ -255,7 +258,7 @@ public class GameManager : MonoBehaviour
             allButtons[i].SetColor(0);
         }
 
-        currentRow = 0;
+        _currentRow = 0;
 
         _gameOver = false;
     }
