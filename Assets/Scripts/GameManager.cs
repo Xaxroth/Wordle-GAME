@@ -86,7 +86,6 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         StartCoroutine(WordTooShort());
-                        _managerAudioSource.PlayOneShot(_insufficientLetters);
                     }
                 }
             }
@@ -102,7 +101,6 @@ public class GameManager : MonoBehaviour
         else
         {
             StartCoroutine(WordTooShort());
-            _managerAudioSource.PlayOneShot(_insufficientLetters);
         }
     }
 
@@ -226,6 +224,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WordTooShort()
     {
+        _managerAudioSource.PlayOneShot(_insufficientLetters);
         _ErrorMessageWordTooShort.SetActive(true);
         yield return new WaitForSeconds(2);
         _ErrorMessageWordTooShort.SetActive(false);
