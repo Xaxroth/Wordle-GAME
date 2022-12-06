@@ -49,6 +49,12 @@ public class LetterScript : MonoBehaviour
     public void ClearAll() // Sets the state of the current letterbox to default and removes any stored string/text data.
     {
         stateHandler = StateHandler.Default;
+
+        if (_gameManager.keyboardButtons.ContainsKey(LetterText.text))
+        {
+            _gameManager.keyboardButtons[LetterText.text].SetColor(0);
+        }
+
         Letter = null;
         LetterText.text = null;
     }
@@ -69,13 +75,7 @@ public class LetterScript : MonoBehaviour
 
                 letterBackground.color = new Color32(255, 220, 90, 255);
 
-                for (int i = 0; i < _gameManager.allButtons.Count; i++)
-                {
-                    if (_gameManager.allButtons[i]._letterChar.ToString().ToUpper() == LetterText.text)
-                    {
-                        _gameManager.allButtons[i].SetColor(1);
-                    }
-                }
+                _gameManager.keyboardButtons[LetterText.text].SetColor(1); // Takes in the letterbox's letter and uses it as a key to access the corresponding keyboard button.
 
                 break;
 
@@ -83,27 +83,13 @@ public class LetterScript : MonoBehaviour
 
                 letterBackground.color = new Color32(80, 255, 70, 255);
 
-                for (int i = 0; i < _gameManager.allButtons.Count; i++)
-                {
-                    if (_gameManager.allButtons[i]._letterChar.ToString().ToUpper() == LetterText.text)
-                    {
-                        _gameManager.allButtons[i].SetColor(2);
-                    }
-                }
+                _gameManager.keyboardButtons[LetterText.text].SetColor(2);
 
                 break;
 
             case StateHandler.Reset:
 
                 letterBackground.color = new Color32(75, 75, 75, 255);
-
-                for (int i = 0; i < _gameManager.allButtons.Count; i++) // Changes the appropriate letters on the on-screen keyboard to their respective colors.
-                {
-                    if (_gameManager.allButtons[i]._letterChar.ToString().ToUpper() == LetterText.text) // Loops through all the buttons on the on-screen keyboard, once it finds the matching key to the correct letter, it turns that key's background the appropriate color.
-                    {
-                        _gameManager.allButtons[i].SetColor(0);
-                    }
-                }
 
                 break;
         }

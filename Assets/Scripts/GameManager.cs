@@ -28,10 +28,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private bool _gameOver;
 
-    public List<LetterScript> allLetters = null;
-    public List<ButtonScript> allButtons = null;
+    public List<LetterScript> allLetters = null; // The list of all letter boxes
 
-    public Dictionary<string, int> keyboardButton = new Dictionary<string, int>();
+    public Dictionary<string, ButtonScript> keyboardButtons = new Dictionary<string, ButtonScript>(); // Dictionary of all keyboard buttons. Each button can be accessed through a string.
 
     public char?[] wordGuess = new char?[_numberOfLettersPerWord];
 
@@ -174,29 +173,10 @@ public class GameManager : MonoBehaviour
 
                         if (letterExists)
                         {
-                            string s = word.ToString();
-
-                            var groups = s.GroupBy(c => c).Where(g => g.Count() > 1);
-
-                            bool duplicateExists = false;
-
-                            foreach (var group in groups)
-                            {
-                                duplicateExists = true;
-                            }
-
-                            if (duplicateExists)
-                            {
-                                allLetters[i + (_currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.Default);
-                            }
-                            else
-                            {
-                                allLetters[i + (_currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.WrongLocation);
-                            }
-
+                            allLetters[i + (_currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.WrongLocation);
                             break;
                         }
-                        else
+                        else // The letter entered is not a part of the word at all.
                         {
                             allLetters[i + (_currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.Default); 
                         }
@@ -219,7 +199,7 @@ public class GameManager : MonoBehaviour
                 _managerAudioSource.PlayOneShot(_wrongWord);
             }
 
-            if (_currentRow < _numberOfRows) // With every guess the player makes, it shifts to the next row and resets the index.
+            if (_currentRow < _numberOfRows) // With every guess the player makes, it shifts to the next row and resets the index as we only need to check the current row for conditions.
             {
                 _currentRow++;
                 _index = 0;
@@ -273,11 +253,6 @@ public class GameManager : MonoBehaviour
             allLetters[i].ClearAll();
             allLetters[i].SetLetterState(StateHandler.Reset);
             DeleteKey();
-        }
-
-        for (int i = 0; i < allButtons.Count; i++) // Resets all button colors to grey.
-        {
-            allButtons[i].SetColor(0);
         }
 
         _currentRow = 0;

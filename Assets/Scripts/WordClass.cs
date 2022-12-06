@@ -19,18 +19,13 @@ public class WordClass : MonoBehaviour
         _wordList = new List<string>(_allWords.text.Split(new char[] { ',', ' ', '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries));
 
         Retry();
-
-        wordToBeGuessed = "TROPE";
-    }
-
-    public void Update()
-    {
-        _wordSpoiler.text = wordToBeGuessed;
     }
 
     public void Retry()
     {
         wordToBeGuessed = GenerateNewWord();
+
+        _wordSpoiler.text = wordToBeGuessed;
     }
 
     public string GenerateNewWord()

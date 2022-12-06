@@ -17,13 +17,17 @@ public class ButtonScript : MonoBehaviour
 
     [SerializeField] private int _letterNumber;
 
+    private bool _correct;
+
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private WordClass _wordClass;
 
     private void Awake()
     {
         _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        _gameManager.allButtons.Add(this);
+
+        _gameManager.keyboardButtons.Add(_letterText, this);
+
     }
 
     void Start() // Sets the keyboard button's char to be equal to that of the first letter of the Text asset's text. Used to compare against character inputs made by the player.
@@ -53,10 +57,14 @@ public class ButtonScript : MonoBehaviour
                 gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
                 break;
             case 1:
-                gameObject.GetComponent<Image>().color = new Color32(255, 220, 90, 255);
+                if (!_correct)
+                {
+                    gameObject.GetComponent<Image>().color = new Color32(255, 220, 90, 255);
+                }
                 break;
             case 2:
                 gameObject.GetComponent<Image>().color = new Color32(80, 255, 70, 255);
+                _correct = true;
                 break;
         }
     }
