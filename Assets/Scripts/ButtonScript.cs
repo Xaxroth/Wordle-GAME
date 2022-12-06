@@ -15,6 +15,8 @@ public class ButtonScript : MonoBehaviour
 
     [SerializeField] public char _letterChar;
 
+    [SerializeField] private int _letterNumber;
+
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private WordClass _wordClass;
 

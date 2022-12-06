@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] const int _numberOfLettersPerWord = 5;
     [SerializeField] private int _numberOfRows = 5;
 
+    [SerializeField] private int _numberOfKeyboardButtons = 26;
+
     [SerializeField] private int _index = 0;
     [SerializeField] private int _currentRow = 0;
 
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     public List<LetterScript> allLetters = null;
     public List<ButtonScript> allButtons = null;
+
+    public Dictionary<string, int> keyboardButton = new Dictionary<string, int>();
 
     public char?[] wordGuess = new char?[_numberOfLettersPerWord];
 
@@ -170,7 +174,26 @@ public class GameManager : MonoBehaviour
 
                         if (letterExists)
                         {
-                            allLetters[i + (_currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.WrongLocation);
+                            string s = word.ToString();
+
+                            var groups = s.GroupBy(c => c).Where(g => g.Count() > 1);
+
+                            bool duplicateExists = false;
+
+                            foreach (var group in groups)
+                            {
+                                duplicateExists = true;
+                            }
+
+                            if (duplicateExists)
+                            {
+                                allLetters[i + (_currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.Default);
+                            }
+                            else
+                            {
+                                allLetters[i + (_currentRow * _numberOfLettersPerWord)].SetLetterState(StateHandler.WrongLocation);
+                            }
+
                             break;
                         }
                         else

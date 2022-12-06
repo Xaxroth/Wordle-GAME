@@ -1096,6 +1096,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621834247}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: F
       objectReference: {fileID: 0}
@@ -1404,6 +1408,10 @@ PrefabInstance:
       propertyPath: _wordClass
       value: 
       objectReference: {fileID: 1621834247}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 53
+      objectReference: {fileID: 0}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: T
@@ -2075,6 +2083,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621834247}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: H
       objectReference: {fileID: 0}
@@ -2635,6 +2647,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621834247}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: A
       objectReference: {fileID: 0}
@@ -2882,6 +2898,10 @@ PrefabInstance:
       propertyPath: _wordClass
       value: 
       objectReference: {fileID: 1621834247}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: D
@@ -4160,6 +4180,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621834247}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: E
       objectReference: {fileID: 0}
@@ -4558,6 +4582,10 @@ PrefabInstance:
       propertyPath: _wordClass
       value: 
       objectReference: {fileID: 1621834247}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 56
+      objectReference: {fileID: 0}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: I
@@ -5274,6 +5302,10 @@ PrefabInstance:
       propertyPath: _wordClass
       value: 
       objectReference: {fileID: 1621834247}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: G
@@ -6078,6 +6110,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621834247}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: J
       objectReference: {fileID: 0}
@@ -6792,6 +6828,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621834247}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: S
       objectReference: {fileID: 0}
@@ -7193,6 +7233,10 @@ PrefabInstance:
       propertyPath: _wordClass
       value: 
       objectReference: {fileID: 1621834247}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: L
@@ -7648,6 +7692,10 @@ PrefabInstance:
       propertyPath: _wordClass
       value: 
       objectReference: {fileID: 1621834247}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: W
@@ -8309,6 +8357,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621834247}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: O
       objectReference: {fileID: 0}
@@ -8733,6 +8785,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621834247}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 54
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: Y
       objectReference: {fileID: 0}
@@ -8885,6 +8941,10 @@ PrefabInstance:
       propertyPath: _wordClass
       value: 
       objectReference: {fileID: 1621834247}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: U
@@ -9303,6 +9363,10 @@ PrefabInstance:
       propertyPath: _wordClass
       value: 
       objectReference: {fileID: 1621834247}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: P
@@ -10538,6 +10602,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621834247}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _letterText
       value: K
       objectReference: {fileID: 0}
@@ -10710,6 +10778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberOfRows: 5
+  _numberOfKeyboardButtons: 26
   _index: 0
   _currentRow: 0
   _letterBoxPrefab: {fileID: 2939015153597402209, guid: dd91390e8a49fd34ca00c290a8006a7b, type: 3}
@@ -11496,6 +11565,10 @@ PrefabInstance:
       propertyPath: _wordClass
       value: 
       objectReference: {fileID: 1621834247}
+    - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
+      propertyPath: _letterChar
+      value: 49
+      objectReference: {fileID: 0}
     - target: {fileID: 7350688201176420680, guid: f45e1e6f3b8527d4c88f6ab115e89b48, type: 3}
       propertyPath: _gameManager
       value: 

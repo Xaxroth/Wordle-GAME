@@ -8,7 +8,7 @@ public class LetterScript : MonoBehaviour
     // This is attached to every square in the game space, set up into a grid by the GameManager. Handles the info regarding what letter the box has storage wise, as well as the visuals.
 
     [SerializeField] private char? Letter { get; set; } = null;
-    [SerializeField] private StateHandler stateHandler { get; set; } = StateHandler.Default;
+    public StateHandler stateHandler { get; set; } = StateHandler.Default;
 
     public GameObject _default;
 
@@ -43,7 +43,7 @@ public class LetterScript : MonoBehaviour
     {
         stateHandler = state;
 
-        StartCoroutine(AnimationCoroutine());
+        StartCoroutine(FlipLetter());
     }
 
     public void ClearAll() // Sets the state of the current letterbox to default and removes any stored string/text data.
@@ -53,7 +53,7 @@ public class LetterScript : MonoBehaviour
         LetterText.text = null;
     }
 
-    private IEnumerator AnimationCoroutine()
+    private IEnumerator FlipLetter()
     {
         letterAnimator.SetBool("Flip", true);
         yield return new WaitForSeconds(0.4f);
@@ -63,14 +63,6 @@ public class LetterScript : MonoBehaviour
             case StateHandler.Default:
 
                 letterBackground.color = new Color32(35, 35, 35, 255); // Changes the background color of the letters to their appropriate color.
-
-                for (int i = 0; i < _gameManager.allButtons.Count; i++) // Changes the appropriate letters on the on-screen keyboard to their respective colors.
-                {
-                    if (_gameManager.allButtons[i]._letterChar.ToString().ToUpper() == LetterText.text) // Loops through all the buttons on the on-screen keyboard, once it finds the matching key to the correct letter, it turns that key's background the appropriate color.
-                    {
-                        _gameManager.allButtons[i].SetColor(0);
-                    }
-                }
 
                 break;
             case StateHandler.WrongLocation:

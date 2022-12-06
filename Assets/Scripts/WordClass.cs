@@ -20,7 +20,7 @@ public class WordClass : MonoBehaviour
 
         Retry();
 
-        wordToBeGuessed = GenerateNewWord();
+        wordToBeGuessed = "TROPE";
     }
 
     public void Update()
