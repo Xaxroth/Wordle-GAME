@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Audio")]
 
-    [SerializeField] private AudioSource _managerAudioSource;
+    [SerializeField] public AudioSource managerAudioSource;
 
     [SerializeField] private AudioClip _wrongWord;
     [SerializeField] private AudioClip _victory;
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                if (c != '\b' && c != '\n' && c != '\r') // As long as the input is not Enter, Return or Newline, the key pressed is added as a part of the list.
+                if (c != '\b' && c != '\n' && c != '\r' && c != ' ') // As long as the input is not Enter, Return, Newline, Space the key pressed is added as a part of the list.
                 {
                     EnterKey(c);
                 }
@@ -190,13 +190,13 @@ public class GameManager : MonoBehaviour
 
             if (word.ToString().Equals(_wordClass.wordToBeGuessed) && _wordClass.wordToBeGuessed != null) // Compiles the array of characters entered into a string and compares it to the word generated from the wordlist. If it matches, the player has correctly guessed the word and won the game.
             {
-                _managerAudioSource.PlayOneShot(_victory);
+                managerAudioSource.PlayOneShot(_victory);
                 _VictoryScreen.SetActive(true);
                 _gameOver = true;
             }
             else
             {
-                _managerAudioSource.PlayOneShot(_wrongWord);
+                managerAudioSource.PlayOneShot(_wrongWord);
             }
 
             if (_currentRow < _numberOfRows) // With every guess the player makes, it shifts to the next row and resets the index as we only need to check the current row for conditions.
@@ -206,13 +206,13 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                _managerAudioSource.PlayOneShot(_victory);
+                managerAudioSource.PlayOneShot(_victory);
                 return;
             }
 
             if (_currentRow == _numberOfRows && !_gameOver) // If the player runs out of guesses, they lose the game.
             {
-                _managerAudioSource.PlayOneShot(_lose);
+                managerAudioSource.PlayOneShot(_lose);
                 _LoseScreen.SetActive(true);
                 _currentRow = 0;
                 _gameOver = true;
@@ -227,7 +227,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WordTooShort()
     {
-        _managerAudioSource.PlayOneShot(_insufficientLetters);
+        managerAudioSource.PlayOneShot(_insufficientLetters);
         _ErrorMessageWordTooShort.SetActive(true);
         yield return new WaitForSeconds(2);
         _ErrorMessageWordTooShort.SetActive(false);
@@ -235,7 +235,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WordDoesNotExist()
     {
-        _managerAudioSource.PlayOneShot(_insufficientLetters);
+        managerAudioSource.PlayOneShot(_insufficientLetters);
         _ErrorMessageWordDoesNotExist.SetActive(true);
         yield return new WaitForSeconds(2);
         _ErrorMessageWordDoesNotExist.SetActive(false);

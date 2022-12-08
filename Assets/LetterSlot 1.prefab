@@ -168,4 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dff1fc60c3037d48bf0b4d44e2f5aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _default: {fileID: 0}
   LetterText: {fileID: 0}
+  letterBackground: {fileID: 0}
+  letterAnimator: {fileID: 0}
+  _inputLetter: {fileID: 8300000, guid: 0843c0c15639fcc47bd90201d7fdbadc, type: 3}
+  _deleteLetter: {fileID: 0}
+  _gameManager: {fileID: 0}

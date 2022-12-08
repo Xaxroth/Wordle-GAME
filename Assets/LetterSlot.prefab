@@ -96,6 +96,8 @@ MonoBehaviour:
   LetterText: {fileID: 1192711424824133682}
   letterBackground: {fileID: 2275893815870248150}
   letterAnimator: {fileID: 2603484904124258517}
+  _inputLetter: {fileID: 8300000, guid: 0843c0c15639fcc47bd90201d7fdbadc, type: 3}
+  _deleteLetter: {fileID: 8300000, guid: 5768792e49c53e44a9126116100bbedf, type: 3}
   _gameManager: {fileID: 0}
 --- !u!95 &2603484904124258517
 Animator:

@@ -18,6 +18,9 @@ public class LetterScript : MonoBehaviour
 
     public Animator letterAnimator;
 
+    [SerializeField] private AudioClip _inputLetter;
+    [SerializeField] private AudioClip _deleteLetter;
+
     [SerializeField] private GameManager _gameManager;
 
     public void Awake()
@@ -28,6 +31,7 @@ public class LetterScript : MonoBehaviour
 
     public void InputLetter(char c)
     {
+        _gameManager.managerAudioSource.PlayOneShot(_inputLetter);
         Letter = c;
         LetterText.text = c.ToString().ToUpper();
         StartCoroutine(ExpandCoroutine());
@@ -35,6 +39,7 @@ public class LetterScript : MonoBehaviour
 
     public void DeleteLetter()
     {
+        _gameManager.managerAudioSource.PlayOneShot(_deleteLetter);
         Letter = null;
         LetterText.text = null;
     }
