@@ -18,6 +18,11 @@ public class LetterScript : MonoBehaviour
 
     public Animator letterAnimator;
 
+    private Color _reset = new Color32(75, 75, 75, 255);
+    private Color _wrong = new Color32(35, 35, 35, 255);
+    private Color _close = new Color32(255, 220, 90, 255);
+    private Color _correct = new Color32(80, 255, 70, 255);
+
     [SerializeField] private AudioClip _inputLetter;
     [SerializeField] private AudioClip _deleteLetter;
 
@@ -73,12 +78,12 @@ public class LetterScript : MonoBehaviour
         {
             case StateHandler.Default:
 
-                letterBackground.color = new Color32(35, 35, 35, 255); // Changes the background color of the letters to their appropriate color.
+                letterBackground.color = _wrong; // Changes the background color of the letters to their appropriate color.
 
                 break;
             case StateHandler.WrongLocation:
 
-                letterBackground.color = new Color32(255, 220, 90, 255);
+                letterBackground.color = _close;
 
                 _gameManager.keyboardButtons[LetterText.text].SetColor(1); // Takes in the letterbox's letter and uses it as a key to access the corresponding keyboard button.
 
@@ -86,7 +91,7 @@ public class LetterScript : MonoBehaviour
 
             case StateHandler.Correct:
 
-                letterBackground.color = new Color32(80, 255, 70, 255);
+                letterBackground.color = _correct;
 
                 _gameManager.keyboardButtons[LetterText.text].SetColor(2);
 
@@ -94,7 +99,7 @@ public class LetterScript : MonoBehaviour
 
             case StateHandler.Reset:
 
-                letterBackground.color = new Color32(75, 75, 75, 255);
+                letterBackground.color = _reset;
 
                 break;
         }
